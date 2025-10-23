@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicholas Wagura - Curriculum Vitae</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', 'Times New Roman', serif;
+        }
+        
+        body {
+            background: white;
+            color: #2d3748;
+            line-height: 1.5;
+            font-size: 12px;
+            padding: 15px;
+        }
+        
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+        }
+        
+        .cv-header {
+            background: #1a365d;
+            color: white;
+            padding: 30px 35px;
+            border-bottom: 4px solid #d69e2e;
+        }
+        
+        .cv-name {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+        
+        .cv-title {
+            font-size: 18px;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11.5px;
+        }
+        
+        .cv-section {
+            margin: 25px 0;
+            page-break-inside: avoid;
+        }
+        
+        .section-title {
+            color: #1a365d;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            padding-bottom: 6px;
+            border-bottom: 3px solid #2b6cb0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .profile-content {
+            text-align: justify;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+        
+        .education-detail, .experience-detail {
+            margin-bottom: 20px;
+        }
+        
+        .detail-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .detail-title {
+            font-weight: 600;
+            font-size: 13.5px;
+            color: #2d3748;
+        }
+        
+        .detail-date {
+            color: #4a5568;
+            font-style: italic;
+            font-size: 11.5px;
+        }
+        
+        .detail-institution {
+            color: #2d3748;
+            font-weight: 500;
+            margin-bottom: 3px;
+            font-size: 12.5px;
+        }
+        
+        .detail-description {
+            margin-top: 8px;
+            font-size: 11.5px;
+        }
+        
+        .skills-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .skills-category {
+            margin-bottom: 15px;
+        }
+        
+        .skills-category h4 {
+            color: #1a365d;
+            margin-bottom: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            border-left: 3px solid #2b6cb0;
+            padding-left: 10px;
+        }
+        
+        .skills-list {
+            list-style: none;
+        }
+        
+        .skills-list li {
+            margin-bottom: 4px;
+            padding-left: 15px;
+            position: relative;
+            font-size: 11.5px;
+        }
+        
+        .skills-list li:before {
+            content: "■";
+            color: #2b6cb0;
+            position: absolute;
+            left: 0;
+            font-size: 8px;
+            top: 2px;
+        }
+        
+        .project-item {
+            margin-bottom: 18px;
+            padding: 12px;
+            background: #f7fafc;
+            border-left: 3px solid #2b6cb0;
+        }
+        
+        .project-title {
+            font-weight: 600;
+            font-size: 12.5px;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+        
+        .project-description {
+            font-size: 11.5px;
+            line-height: 1.5;
+        }
+        
+        .achievement-list {
+            list-style: none;
+        }
+        
+        .achievement-list li {
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+            font-size: 11.5px;
+        }
+        
+        .achievement-list li:before {
+            content: "★";
+            color: #d69e2e;
+            position: absolute;
+            left: 0;
+        }
+        
+        .languages-container {
+            display: flex;
+            gap: 30px;
+            margin-top: 10px;
+        }
+        
+        .language-proficiency {
+            font-size: 11.5px;
+        }
+        
+        .language-proficiency strong {
+            color: #1a365d;
+        }
+        
+        .page-break {
+            page-break-before: always;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+                font-size: 11px;
+            }
+            
+            .cv-container {
+                max-width: 100%;
+            }
+            
+            .cv-header {
+                background: #1a365d !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .cv-section {
+                page-break-inside: avoid;
+            }
+            
+            .page-break {
+                page-break-before: always;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Header Section -->
+        <div class="cv-header">
+            <div class="cv-name">NICHOLAS WAGURA</div>
+            <div class="cv-title">Computer Science & Mathematics Scholar | AI Research Specialist</div>
+            <div class="contact-grid">
+                <div class="contact-item">📧 nicholusmush@gmail.com</div>
+                <div class="contact-item">📱 +254 703576876</div>
+                <div class="contact-item">📍 Mombasa, Kenya</div>
+                <div class="contact-item">🔗 LinkedIn: Available upon request</div>
+            </div>
+        </div>
+
+        <!-- Professional Summary -->
+        <div class="cv-section">
+            <div class="section-title">Professional Summary</div>
+            <p class="profile-content">
+                Dedicated Computer Science and Mathematics student with a strong foundation in analytical thinking, research methodology, and technical problem-solving. Demonstrated expertise in academic writing, AI system evaluation, and cross-disciplinary research. Proven ability to work independently in remote settings while maintaining high standards of accuracy and ethical consideration. Seeking opportunities to contribute to innovative AI projects and research initiatives that prioritize data quality and ethical development practices.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+            <!-- Left Column - Page 1 -->
+            <div>
+                <!-- Education -->
+                <div class="cv-section">
+                    <div class="section-title">Education</div>
+                    <div class="education-detail">
+                        <div class="detail-header">
+                            <div class="detail-title">Bachelor of Science in Computer Science & Mathematics</div>
+                        </div>
+                        <div class="detail-institution">Technical University of Mombasa</div>
+                        <div class="detail-date">Expected Graduation: 2026</div>
+                        <div class="detail-description">
+                            Comprehensive program covering advanced mathematics, computer science theory, and practical programming applications. Focus areas include discrete mathematics, algorithms, data structures, and computational theory.
+                        </div>
+                    </div>
+                    <div class="education-detail">
+                        <div class="detail-header">
+                            <div class="detail-title">Bachelor of Science in Computer Science</div>
+                        </div>
+                        <div class="detail-institution">University of the People (Online)</div>
+                        <div class="detail-date">Ongoing</div>
+                        <div class="detail-description">
+                            Accredited online degree program emphasizing software development, database management, and computer systems. Complementing technical education with flexible, self-directed learning.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Skills -->
+                <div class="cv-section">
+                    <div class="section-title">Technical Skills</div>
+                    <div class="skills-categories">
+                        <div class="skills-category">
+                            <h4>Programming Languages</h4>
+                            <ul class="skills-list">
+                                <li>Python (Advanced)</li>
+                                <li>Java (Intermediate)</li>
+                                <li>Object-Oriented Programming</li>
+                                <li>Algorithm Design</li>
+                            </ul>
+                        </div>
+                        <div class="skills-category">
+                            <h4>Development Tools</h4>
+                            <ul class="skills-list">
+                                <li>Jupyter Notebooks</li>
+                                <li>PyQt Framework</li>
+                                <li>MoviePy, OpenCV</li>
+                                <li>Linux (Kali) Environment</li>
+                            </ul>
+                        </div>
+                        <div class="skills-category">
+                            <h4>AI & Machine Learning</h4>
+                            <ul class="skills-list">
+                                <li>AI Platform Proficiency</li>
+                                <li>Prompt Engineering & Design</li>
+                                <li>Model Evaluation Techniques</li>
+                                <li>Ethical AI Implementation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Page 1 -->
+            <div>
+                <!-- Professional Experience -->
+                <div class="cv-section">
+                    <div class="section-title">Professional Experience</div>
+                    <div class="experience-detail">
+                        <div class="detail-header">
+                            <div class="detail-title">Freelance Academic & Technical Writer</div>
+                            <div class="detail-date">2023 – Present</div>
+                        </div>
+                        <div class="detail-description">
+                            <ul class="skills-list">
+                                <li>Authored comprehensive academic papers and research reports across psychology, mathematics, and computer science disciplines</li>
+                                <li>Implemented rigorous editing and proofreading processes to ensure clarity, factual accuracy, and adherence to academic standards</li>
+                                <li>Developed critical analysis skills through source evaluation and information synthesis for coherent argument construction</li>
+                                <li>Maintained consistent quality while working independently in remote settings with minimal supervision</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="experience-detail">
+                        <div class="detail-header">
+                            <div class="detail-title">Academic Research & Programming Projects</div>
+                            <div class="detail-date">2022 – Present</div>
+                        </div>
+                        <div class="detail-description">
+                            <ul class="skills-list">
+                                <li>Designed and implemented Python and Java applications demonstrating object-oriented programming principles and software engineering best practices</li>
+                                <li>Developed complex algorithms and efficient data structures for academic computing projects</li>
+                                <li>Conducted applied mathematics research with emphasis on precision, analytical rigor, and methodological soundness</li>
+                                <li>Collaborated on interdisciplinary projects integrating computer science with psychological research methodologies</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Competencies -->
+                <div class="cv-section">
+                    <div class="section-title">Core Competencies</div>
+                    <div class="skills-categories">
+                        <div class="skills-category">
+                            <h4>Analytical & Research</h4>
+                            <ul class="skills-list">
+                                <li>Complex Problem Deconstruction</li>
+                                <li>Fact-checking & Accuracy Validation</li>
+                                <li>Research Methodology & Design</li>
+                                <li>Critical Analysis & Synthesis</li>
+                                <li>Data Quality Assessment</li>
+                            </ul>
+                        </div>
+                        <div class="skills-category">
+                            <h4>Professional Skills</h4>
+                            <ul class="skills-list">
+                                <li>Remote Work & Self-Management</li>
+                                <li>Academic & Technical Writing</li>
+                                <li>Deadline-oriented Project Delivery</li>
+                                <li>Clear Technical Communication</li>
+                                <li>Ethical Research Practices</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page Break for Second Page -->
+        <div class="page-break"></div>
+
+        <!-- Second Page Content -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px;">
+            <!-- Left Column - Page 2 -->
+            <div>
+                <!-- Research Projects -->
+                <div class="cv-section">
+                    <div class="section-title">Research & Academic Projects</div>
+                    <div class="project-item">
+                        <div class="project-title">Interdisciplinary Psychology-Computer Science Research</div>
+                        <div class="project-description">
+                            Collaborative project examining the intersection of cognitive psychology and computing systems. Developed research methodologies and analytical frameworks for cross-disciplinary study.
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-title">Applied Mathematics Problem-Solving</div>
+                        <div class="project-description">
+                            Conducted research in discrete mathematics and number theory, developing novel approaches to complex mathematical problems with computational applications.
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-title">AI System Evaluation Framework</div>
+                        <div class="project-description">
+                            Developed methodologies for assessing AI system performance, focusing on accuracy metrics, ethical considerations, and output quality evaluation.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications & Training -->
+                <div class="cv-section">
+                    <div class="section-title">Professional Development</div>
+                    <div class="skills-list">
+                        <li><strong>IBM SkillsBuild</strong> - AI and Data Science Foundations</li>
+                        <li><strong>DataCamp</strong> - Python Programming and Data Analysis</li>
+                        <li><strong>Self-Directed Learning</strong> - Ethical AI Practices and Prompt Engineering</li>
+                        <li><strong>Academic Research</strong> - Methodology and Technical Writing</li>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Page 2 -->
+            <div>
+                <!-- Academic Achievements -->
+                <div class="cv-section">
+                    <div class="section-title">Academic Achievements</div>
+                    <ul class="achievement-list">
+                        <li>Consistently high academic performance in advanced mathematics courses including discrete mathematics and number theory</li>
+                        <li>Recognition for excellence in computer science coursework and programming projects</li>
+                        <li>Selection for prestigious collaborative research projects combining multiple academic disciplines</li>
+                        <li>Demonstrated proficiency in both theoretical concepts and practical applications across mathematics and computing</li>
+                    </ul>
+                </div>
+
+                <!-- Research Interests -->
+                <div class="cv-section">
+                    <div class="section-title">Research Interests</div>
+                    <ul class="skills-list">
+                        <li>Artificial Intelligence Ethics and Development</li>
+                        <li>Data Quality and Validation Methodologies</li>
+                        <li>Human-Computer Interaction and Cognitive Psychology</li>
+                        <li>Algorithmic Problem-Solving and Optimization</li>
+                        <li>Interdisciplinary Research Methodologies</li>
+                    </ul>
+                </div>
+
+                <!-- Languages -->
+                <div class="cv-section">
+                    <div class="section-title">Languages</div>
+                    <div class="languages-container">
+                        <div class="language-proficiency">
+                            <strong>English:</strong> Fluent (Professional Proficiency)<br>
+                            Reading, Writing, Speaking
+                        </div>
+                        <div class="language-proficiency">
+                            <strong>Swahili:</strong> Native Speaker<br>
+                            Full Professional Proficiency
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Availability -->
+                <div class="cv-section">
+                    <div class="section-title">Availability</div>
+                    <p class="profile-content" style="font-size: 11.5px;">
+                        Available for research collaborations, freelance academic writing projects, and AI development initiatives. Particularly interested in opportunities involving ethical AI development, data quality assessment, and interdisciplinary research projects. Flexible for remote work arrangements.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function printCV() {
+            window.print();
+        }
+        
+        // Optional: Auto-print when loaded
+        // window.addEventListener('load', function() {
+        //     setTimeout(printCV, 1000);
+        // });
+    </script>
+</body>
+</html>

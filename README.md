@@ -11,3 +11,4 @@ It showcases my education, skills, and projects as a **Computer Science professi
   - CSS3  
   - (Optional) TailwindCSS or Bootstrap for styling  
 - **Output:** A clean and structured single-page resume ready for hosting on GitHub Page
+# purehtml
