@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicholas Wagura - Data Engineer CV (Improved)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', 'Times New Roman', serif;
+        }
+        
+        body {
+            background: white;
+            color: #2d3748;
+            line-height: 1.5;
+            font-size: 12px;
+            padding: 15px;
+        }
+        
+        .cv-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+        }
+        
+        .cv-header {
+            background: #1a365d;
+            color: white;
+            padding: 30px 35px;
+            border-bottom: 4px solid #d69e2e;
+        }
+        
+        .cv-name {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+        
+        .cv-title {
+            font-size: 18px;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px dotted #d69e2e;
+        }
+        
+        .contact-item a:hover {
+            color: #d69e2e;
+        }
+        
+        .cv-section {
+            margin-bottom: 22px;
+            page-break-inside: avoid;
+        }
+        
+        .section-title {
+            color: #1a365d;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #2b6cb0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .profile-content {
+            text-align: justify;
+            font-size: 11.5px;
+            line-height: 1.55;
+        }
+        
+        .education-detail, .experience-detail {
+            margin-bottom: 16px;
+        }
+        
+        .detail-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4px;
+            flex-wrap: wrap;
+        }
+        
+        .detail-title {
+            font-weight: 600;
+            font-size: 12.5px;
+            color: #2d3748;
+        }
+        
+        .detail-date {
+            color: #4a5568;
+            font-style: italic;
+            font-size: 10.5px;
+        }
+        
+        .detail-institution {
+            color: #2d3748;
+            font-weight: 500;
+            margin-bottom: 3px;
+            font-size: 11px;
+        }
+        
+        .detail-description {
+            margin-top: 6px;
+            font-size: 11px;
+        }
+        
+        .skills-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 12px;
+        }
+        
+        .skills-category {
+            margin-bottom: 10px;
+        }
+        
+        .skills-category h4 {
+            color: #1a365d;
+            margin-bottom: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            border-left: 3px solid #2b6cb0;
+            padding-left: 8px;
+        }
+        
+        .skills-list {
+            list-style: none;
+        }
+        
+        .skills-list li {
+            margin-bottom: 3px;
+            padding-left: 14px;
+            position: relative;
+            font-size: 10.5px;
+            line-height: 1.4;
+        }
+        
+        .skills-list li:before {
+            content: "■";
+            color: #2b6cb0;
+            position: absolute;
+            left: 0;
+            font-size: 8px;
+            top: 2px;
+        }
+        
+        .project-item {
+            margin-bottom: 14px;
+            padding: 10px;
+            background: #f7fafc;
+            border-left: 3px solid #2b6cb0;
+        }
+        
+        .project-title {
+            font-weight: 600;
+            font-size: 11.5px;
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        
+        .project-description {
+            font-size: 10.5px;
+            line-height: 1.45;
+        }
+        
+        .project-description ul {
+            margin-left: 18px;
+            margin-top: 4px;
+        }
+        
+        .project-description li {
+            margin-bottom: 2px;
+        }
+        
+        .cert-item {
+            margin-bottom: 8px;
+            font-size: 11px;
+        }
+        
+        .cert-item strong {
+            color: #1a365d;
+        }
+        
+        .languages-container {
+            display: flex;
+            gap: 25px;
+            margin-top: 6px;
+            flex-wrap: wrap;
+        }
+        
+        .language-proficiency {
+            font-size: 11px;
+        }
+        
+        .language-proficiency strong {
+            color: #1a365d;
+        }
+        
+        .two-column-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+        
+        /* Make both columns stretch to equal height */
+        .left-column, .right-column {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .right-column {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Push last section to bottom if needed, but we'll balance content */
+        .spacer {
+            flex: 1;
+        }
+        
+        hr {
+            margin: 12px 0;
+            border: 0;
+            height: 1px;
+            background: #e2e8f0;
+        }
+        
+        .footer-note {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 9px;
+            color: #718096;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 12px;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #d69e2e;
+            color: #1a365d;
+            font-size: 8px;
+            padding: 2px 5px;
+            border-radius: 10px;
+            margin-left: 6px;
+            font-weight: bold;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+                font-size: 10.5px;
+            }
+            
+            .cv-container {
+                max-width: 100%;
+            }
+            
+            .cv-header {
+                background: #1a365d !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .cv-section {
+                page-break-inside: avoid;
+            }
+            
+            .project-item {
+                background: #f7fafc;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Header Section -->
+        <div class="cv-header">
+            <div class="cv-name">NICHOLAS MUCHIRI WAGURA</div>
+            <div class="cv-title">Data Engineering & AI | Computer Science & Mathematics Student</div>
+            <div class="contact-grid">
+                <div class="contact-item">nicholusmush@gmail.com</div>
+                <div class="contact-item">+254 703576876</div>
+                <div class="contact-item">Mombasa, Kenya</div>
+                <div class="contact-item"><a href="https://www.linkedin.com/in/benard-mwangi-b683002b2" target="_blank">LinkedIn: benard-mwangi</a></div>
+                <div class="contact-item"><a href="https://github.com/nicholus-mush" target="_blank">GitHub: nicholus-mush</a></div>
+                <div class="contact-item">Portfolio: SQL + ETL Projects</div>
+            </div>
+        </div>
+
+        <!-- Professional Summary -->
+        <div class="cv-section">
+            <div class="section-title">Professional Summary</div>
+            <p class="profile-content">
+                <strong>Data Engineering & AI enthusiast</strong> with DataCamp Associate Data Engineer certification (March 2026) and IBM AI/Data Fundamentals. Proficient in <strong>Python (Pandas), SQL (MySQL, SQLite, PostgreSQL), and ETL pipelines</strong>. Built <strong>5+ database projects</strong> including a student records system (1,000+ records), library management system (6 tables), and sales data warehouse (star schema). Completed ETL project: extracted CSV data, transformed with Pandas, loaded into MySQL. Currently learning AWS Cloud Fundamentals. Seeking industrial attachment in <strong>Data Engineering</strong> to contribute to real-world data infrastructure.
+            </p>
+        </div>
+
+        <!-- Two Column Layout - Balanced -->
+        <div class="two-column-layout">
+            <!-- LEFT COLUMN -->
+            <div class="left-column">
+                <!-- Education -->
+                <div class="cv-section">
+                    <div class="section-title">Education</div>
+                    <div class="education-detail">
+                        <div class="detail-header">
+                            <div class="detail-title">BSc Computer Science & Mathematics</div>
+                        </div>
+                        <div class="detail-institution">Technical University of Mombasa</div>
+                        <div class="detail-date">Expected Graduation: 2027</div>
+                        <div class="detail-description">
+                            <strong>Relevant coursework:</strong> Database Systems (B+), Data Structures, Algorithms, Discrete Mathematics, Software Engineering.
+                        </div>
+                    </div>
+                    <div class="education-detail">
+                        <div class="detail-header">
+                            <div class="detail-title">BSc Computer Science (Online)</div>
+                        </div>
+                        <div class="detail-institution">University of the People</div>
+                        <div class="detail-date">Ongoing</div>
+                        <div class="detail-description">
+                            Software Development, Database Management, Computer Systems.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="cv-section">
+                    <div class="section-title">Certifications</div>
+                    <div class="cert-item"><strong>DataCamp</strong> — Associate Data Engineer <span class="badge">March 2026</span></div>
+                    <div class="cert-item"><strong>IBM SkillsBuild</strong> — AI & Data Science Foundations <span class="badge">2025</span></div>
+                    <div class="cert-item"><strong>IBM</strong> — Data Fundamentals & AI Fundamentals <span class="badge">2025</span></div>
+                    <div class="cert-item"><strong>AWS Skill Builder</strong> — Cloud Data Fundamentals <span class="badge">In Progress</span></div>
+                    <div class="cert-item"><strong>Self-Directed</strong> — Differential Privacy, Pandas, ETL Pipelines, Ethical AI</div>
+                </div>
+
+                <!-- Technical Skills -->
+                <div class="cv-section">
+                    <div class="section-title">Technical Skills</div>
+                    <div class="skills-categories">
+                        <div class="skills-category">
+                            <h4>Data Engineering</h4>
+                            <ul class="skills-list">
+                                <li>SQL (MySQL, SQLite, PostgreSQL)</li>
+                                <li>ETL Pipelines (CSV to Pandas to Database)</li>
+                                <li>Database Design & Query Optimization</li>
+                                <li>Data Quality & Validation</li>
+                                <li>Differential Privacy & Ethics</li>
+                            </ul>
+                        </div>
+                        <div class="skills-category">
+                            <h4>Programming & Tools</h4>
+                            <ul class="skills-list">
+                                <li>Python (Pandas, NumPy, automation)</li>
+                                <li>Java, JavaScript, HTML</li>
+                                <li>Git & GitHub (SQL repos)</li>
+                                <li>Jupyter Notebooks, VS Code</li>
+                                <li>Linux (Kali) Command Line</li>
+                            </ul>
+                        </div>
+                        <div class="skills-category">
+                            <h4>Cloud & Big Data</h4>
+                            <ul class="skills-list">
+                                <li>AWS Cloud Fundamentals (in progress)</li>
+                                <li>Google BigQuery (exploring)</li>
+                                <li>Data Warehousing Concepts</li>
+                            </ul>
+                        </div>
+                        <div class="skills-category">
+                            <h4>AI & Analytics</h4>
+                            <ul class="skills-list">
+                                <li>RAG Pipelines & Vector DBs</li>
+                                <li>AI Agents & Automation</li>
+                                <li>Model Evaluation & Prompt Engineering</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Competencies -->
+                <div class="cv-section">
+                    <div class="section-title">Core Competencies</div>
+                    <div class="skills-categories">
+                        <div class="skills-category">
+                            <h4>Data & Privacy</h4>
+                            <ul class="skills-list">
+                                <li>Privacy-Preserving Data Systems</li>
+                                <li>Data Quality Assessment</li>
+                                <li>Database Normalization (1NF–3NF)</li>
+                                <li>Ethical AI Implementation</li>
+                            </ul>
+                        </div>
+                        <div class="skills-category">
+                            <h4>Professional</h4>
+                            <ul class="skills-list">
+                                <li>Technical Documentation</li>
+                                <li>Remote Work & Self-Management</li>
+                                <li>Deadline-oriented Delivery</li>
+                                <li>Problem-Solving & Analysis</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Languages - moved to left column for balance -->
+                <div class="cv-section">
+                    <div class="section-title">Languages</div>
+                    <div class="languages-container">
+                        <div class="language-proficiency">
+                            <strong>English:</strong> Fluent (Professional Proficiency)
+                        </div>
+                        <div class="language-proficiency">
+                            <strong>Swahili:</strong> Native Speaker
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="right-column">
+                <!-- Technical Experience (Work-like) -->
+                <div class="cv-section">
+                    <div class="section-title">Technical Experience</div>
+                    
+                    <div class="experience-detail">
+                        <div class="detail-header">
+                            <div class="detail-title">Database Design Project (Academic)</div>
+                            <div class="detail-date">Jan 2026 – Apr 2026</div>
+                        </div>
+                        <div class="detail-institution">Technical University of Mombasa | Database Systems Course</div>
+                        <div class="detail-description">
+                            <ul class="skills-list">
+                                <li>Designed and implemented a MySQL database for student course registration handling <strong>1,000+ students and 50+ courses</strong></li>
+                                <li>Wrote <strong>20+ SQL queries</strong> including multi-table JOINs, subqueries, and aggregate functions</li>
+                                <li>Created <strong>3 views</strong> for automated grade reports and <strong>2 stored procedures</strong> for data validation</li>
+                                <li>Reduced query response time by <strong>40%</strong> through strategic indexing on foreign keys</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-detail">
+                        <div class="detail-header">
+                            <div class="detail-title">ETL Pipeline Project (Self-Directed)</div>
+                            <div class="detail-date">May 2026</div>
+                        </div>
+                        <div class="detail-institution">Personal Portfolio | GitHub: nicholus-mush/etl-project</div>
+                        <div class="detail-description">
+                            <ul class="skills-list">
+                                <li><strong>Extracted</strong> raw sales data from CSV files (10,000+ rows) using Python Pandas</li>
+                                <li><strong>Transformed</strong> data: cleaned null values, standardized date formats, aggregated monthly sales</li>
+                                <li><strong>Loaded</strong> cleaned data into MySQL database with automated schema creation</li>
+                                <li>Documented complete ETL pipeline with README and query examples on GitHub</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SQL & Database Projects -->
+                <div class="cv-section">
+                    <div class="section-title">SQL & Database Projects</div>
+                    
+                    <div class="project-item">
+                        <div class="project-title">Student Records Database (MySQL)</div>
+                        <div class="project-description">
+                            <ul>
+                                <li>Designed <strong>6-table normalized schema</strong> with foreign keys and indexes</li>
+                                <li>Wrote <strong>15+ SQL queries</strong> including JOINs, subqueries, and aggregate functions</li>
+                                <li>Created <strong>3 views</strong> for grade reports and <strong>2 stored procedures</strong> for validation</li>
+                                <li>Database handled mock data for 1,000+ students across 50 courses</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="project-item">
+                        <div class="project-title">Sales Data Warehouse (SQLite)</div>
+                        <div class="project-description">
+                            <ul>
+                                <li>Built a <strong>star schema</strong> (fact table + 4 dimension tables) for sales analysis</li>
+                                <li>Wrote <strong>ETL-style queries</strong> to clean, transform, and aggregate transaction data</li>
+                                <li>Generated <strong>monthly revenue reports</strong> and customer segmentation insights</li>
+                                <li>Reduced query time by <strong>40%</strong> for monthly reporting queries</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="project-item">
+                        <div class="project-title">Library Management System (MySQL)</div>
+                        <div class="project-description">
+                            <ul>
+                                <li>Created database with <strong>6+ tables</strong> including books, members, loans, fines</li>
+                                <li>Implemented <strong>triggers</strong> for automatic fine calculation and <strong>indexes</strong> for optimization</li>
+                                <li>Practiced <strong>backup and restore procedures</strong> using mysqldump</li>
+                                <li>System tracked 5,000+ books and 500+ active members</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI & Advanced Projects -->
+                <div class="cv-section">
+                    <div class="section-title">AI & Advanced Projects</div>
+                    
+                    <div class="project-item">
+                        <div class="project-title">Differential Privacy Research</div>
+                        <div class="project-description">
+                            <ul>
+                                <li>Researched privacy-preserving data analysis mechanisms (Laplace mechanism, ε-differential privacy)</li>
+                                <li>Evaluated trade-offs between data utility and privacy guarantees for aggregate queries</li>
+                                <li>Documented findings and potential applications for healthcare data sharing</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="project-item">
+                        <div class="project-title">RAG Pipeline & AI Agents</div>
+                        <div class="project-description">
+                            <ul>
+                                <li>Built Retrieval-Augmented Generation pipelines integrating vector databases for contextual AI responses</li>
+                                <li>Developed autonomous AI agents for task automation and decision support</li>
+                                <li>Applied embedding models and semantic search techniques</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="project-item">
+                        <div class="project-title">Intelligent Port Operations Simulation</div>
+                        <div class="project-description">
+                            <ul>
+                                <li>Designed AI-driven simulation for port operations using predictive modeling</li>
+                                <li>Developed feature forecasting models for operational efficiency</li>
+                                <li>Applied algorithmic optimization for resource allocation (cranes, berths, labor)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="project-item">
+                        <div class="project-title">Python Automation & Password Generator</div>
+                        <div class="project-description">
+                            <ul>
+                                <li>Developed Python automation scripts for file organization (1,000+ files processed)</li>
+                                <li>Built secure password generation tool with customizable parameters on GitHub</li>
+                                <li>Demonstrated OOP principles and algorithm efficiency (O(n) time complexity)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Availability -->
+                <div class="cv-section">
+                    <div class="section-title">Availability</div>
+                    <p class="profile-content" style="font-size: 11px;">
+                        Available for <strong>Industrial Attachment / Internship</strong> (3–6 months, required by academic program).<br>
+                        Target role: <strong>Data Engineer, Data Engineering Intern, or Database Developer</strong>.<br>
+                        Location: Mombasa or remote/hybrid nationwide.<br>
+                        Start date: <strong>Immediate (June 2026)</strong>.
+                    </p>
+                </div>
+
+                <!-- Portfolio & GitHub -->
+                <div class="cv-section">
+                    <div class="section-title">Portfolio & GitHub</div>
+                    <p class="profile-content" style="font-size: 10.5px;">
+                        All SQL databases, ETL pipeline, and Python projects available at:<br>
+                        <strong>github.com/nicholus-mush</strong><br>
+                        Repositories include: SQL-portfolio, ETL-pipeline, student-database, library-system
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-note">
+            GitHub: github.com/nicholus-mush | LinkedIn: linkedin.com/in/benard-mwangi-b683002b2 | Updated: May 2026
+        </div>
+    </div>
+</body>
+</html>
