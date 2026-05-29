@@ -2,239 +2,424 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nicholus wagura | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Nicholas Muchiri Wagura - Computer Science and Mathematics student specializing in Data Engineering, AI, and Machine Learning">
+    <meta name="author" content="Nicholas Muchiri Wagura">
+    <title>Nicholas Muchiri Wagura | Data Engineer & AI Enthusiast</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Base Styles */
+        /* ========== BASE STYLES ========== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        html {
-            scroll-behavior: smooth;
+        :root {
+            --primary: #1a365d;
+            --primary-light: #2b6cb0;
+            --secondary: #d69e2e;
+            --accent: #4a6ee0;
+            --gray-dark: #2d3748;
+            --gray: #4a5568;
+            --gray-light: #e2e8f0;
+            --bg-light: #f7fafc;
+            --bg-white: #ffffff;
+            --success: #38a169;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
         }
 
         body {
-            background-color: #f9f9f9;
-            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--gray-dark);
             line-height: 1.6;
+            background-color: var(--bg-white);
+            font-size: 16px;
         }
 
         .container {
-            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
-        section {
-            padding: 80px 0;
-        }
-
-        h1, h2, h3 {
-            margin-bottom: 20px;
-            color: #222;
-        }
-
-        p {
-            margin-bottom: 15px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: #4a6ee0;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
+        /* ========== TYPOGRAPHY ========== */
+        h1, h2, h3, h4 {
             font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+            line-height: 1.3;
+            margin-bottom: 16px;
+            color: var(--primary);
         }
 
-        .btn:hover {
-            background-color: #3a5bc7;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.35rem; }
+        h4 { font-size: 1.1rem; }
 
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 48px;
             position: relative;
+            padding-bottom: 16px;
         }
 
-        .section-title::after {
+        .section-title:after {
             content: '';
             position: absolute;
-            width: 80px;
-            height: 4px;
-            background-color: #4a6ee0;
-            bottom: -15px;
+            bottom: 0;
             left: 50%;
             transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            background: var(--accent);
             border-radius: 2px;
         }
 
-        /* Header & Navigation */
+        /* ========== BUTTONS ========== */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: var(--radius-sm);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-cv {
+            background: var(--secondary);
+            color: var(--primary);
+            border: none;
+        }
+
+        .btn-cv:hover {
+            background: #c08e2a;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* ========== NAVIGATION ========== */
         header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background: var(--bg-white);
+            box-shadow: var(--shadow-sm);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            padding: 16px 0;
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            flex-wrap: wrap;
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 1.5rem;
             font-weight: 700;
-            color: #4a6ee0;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent);
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 30px;
+            gap: 32px;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: #333;
+            color: var(--gray-dark);
             font-weight: 500;
+            font-size: 1rem;
             transition: color 0.3s ease;
+            padding: 8px 0;
         }
 
         .nav-links a:hover {
-            color: #4a6ee0;
+            color: var(--accent);
         }
 
         .menu-toggle {
             display: none;
-            font-size: 24px;
+            font-size: 1.5rem;
             cursor: pointer;
+            color: var(--primary);
         }
 
-        /* Hero Section */
+        /* ========== HERO SECTION ========== */
         .hero {
-            background: linear-gradient(135deg, #4a6ee0, #6c8eff);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             color: white;
-            padding: 150px 0 100px;
+            padding: 140px 0 80px;
+            margin-top: 0;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .hero-text .tagline {
+            font-size: 1.25rem;
+            margin-bottom: 24px;
+            opacity: 0.95;
+        }
+
+        .hero-text .intro {
+            font-size: 1rem;
+            margin-bottom: 32px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-buttons .btn-outline {
+            border-color: white;
+            color: white;
+        }
+
+        .hero-buttons .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        .hero-buttons .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .hero-buttons .btn-primary:hover {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .hero-image {
+            flex: 0.8;
             text-align: center;
         }
 
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            color: white;
+        /* Profile Image Styles - Rounded */
+        .profile-image {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: var(--shadow-lg);
+            border: 4px solid white;
+            background: var(--secondary);
         }
 
-        .hero p {
-            font-size: 20px;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-
-        .hero-btns {
+        .profile-placeholder {
+            width: 280px;
+            height: 280px;
+            background: linear-gradient(135deg, var(--secondary), #f0c674);
+            border-radius: 50%;
             display: flex;
+            align-items: center;
             justify-content: center;
-            gap: 15px;
-            margin-top: 30px;
+            margin: 0 auto;
+            box-shadow: var(--shadow-lg);
         }
 
-        .hero-btns .btn {
-            background-color: white;
-            color: #4a6ee0;
-        }
-
-        .hero-btns .btn-outline {
-            background-color: transparent;
-            border: 2px solid white;
+        .profile-placeholder i {
+            font-size: 8rem;
             color: white;
+            opacity: 0.9;
         }
 
-        .hero-btns .btn-outline:hover {
-            background-color: white;
-            color: #4a6ee0;
+        /* ========== SECTIONS ========== */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-bg-light {
+            background: var(--bg-light);
         }
 
         /* About Section */
         .about-content {
             display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-
-        .about-img {
-            flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .about-img img {
-            width: 100%;
-            height: auto;
-            display: block;
+            gap: 48px;
+            align-items: flex-start;
+            flex-wrap: wrap;
         }
 
         .about-text {
-            flex: 1;
+            flex: 2;
         }
 
-        .skills {
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .skill-category {
+            background: var(--bg-white);
+            padding: 24px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-light);
+        }
+
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+        }
+
+        .skill-items {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 20px;
+            gap: 12px;
         }
 
-        .skill {
-            background-color: #e9ecef;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 14px;
+        .skill-tag {
+            background: var(--bg-light);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            color: var(--gray-dark);
+            border: 1px solid var(--gray-light);
+            transition: all 0.2s ease;
         }
 
-        /* Projects Section */
-        .projects {
-            background-color: #f1f5f9;
+        .skill-tag:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
         }
 
-        .project-grid {
+        /* Certifications Grid */
+        .certs-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .cert-card {
+            background: var(--bg-white);
+            padding: 24px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid var(--accent);
+            transition: transform 0.2s ease;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .cert-card i {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .cert-card h4 {
+            margin-bottom: 8px;
+        }
+
+        .cert-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .cert-date {
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 0.8rem;
+            color: var(--secondary);
+            font-weight: 500;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
         }
 
         .project-card {
-            background-color: white;
-            border-radius: 10px;
+            background: var(--bg-white);
+            border-radius: var(--radius-md);
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .project-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
         }
 
         .project-img {
+            width: 100%;
             height: 200px;
             overflow: hidden;
         }
@@ -247,62 +432,123 @@
         }
 
         .project-card:hover .project-img img {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
-        .project-info {
-            padding: 20px;
+        .project-content {
+            padding: 24px;
         }
 
-        .project-info h3 {
-            margin-bottom: 10px;
+        .project-content h3 {
+            margin-bottom: 12px;
         }
 
-        .project-tags {
+        .project-content p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+        }
+
+        .project-tech {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin: 15px 0;
-        }
-
-        .project-tag {
-            background-color: #e9ecef;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 12px;
-        }
-
-        /* Contact Section */
-        .contact-content {
-            display: flex;
-            gap: 50px;
-        }
-
-        .contact-info {
-            flex: 1;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
             margin-bottom: 20px;
         }
 
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background-color: #4a6ee0;
+        .project-tech span {
+            background: var(--bg-light);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: var(--primary);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .project-links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .project-links a:hover {
+            color: var(--primary);
+        }
+
+        .repo-badge {
+            display: inline-block;
+            background: var(--secondary);
             color: white;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 12px;
+            margin-left: 8px;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 48px;
+        }
+
+        .contact-info {
+            background: var(--bg-white);
+            padding: 32px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding: 12px;
+            border-radius: var(--radius-sm);
+            transition: background 0.2s ease;
+        }
+
+        .contact-detail:hover {
+            background: var(--bg-light);
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
-            font-size: 20px;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .contact-detail h4 {
+            margin-bottom: 4px;
+        }
+
+        .contact-detail p, .contact-detail a {
+            color: var(--gray);
+            text-decoration: none;
+        }
+
+        .contact-detail a:hover {
+            color: var(--accent);
         }
 
         .contact-form {
-            flex: 1;
+            background: var(--bg-white);
+            padding: 32px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
         }
 
         .form-group {
@@ -313,339 +559,690 @@
             display: block;
             margin-bottom: 8px;
             font-weight: 500;
+            color: var(--gray-dark);
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
+            padding: 12px 16px;
+            border: 1px solid var(--gray-light);
+            border-radius: var(--radius-sm);
+            font-size: 1rem;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
         }
 
         .form-group textarea {
-            height: 150px;
             resize: vertical;
+            min-height: 120px;
         }
 
         /* Footer */
         footer {
-            background-color: #222;
+            background: var(--primary);
             color: white;
-            padding: 50px 0 20px;
+            padding: 48px 0 24px;
         }
 
         .footer-content {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 40px;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-bottom: 32px;
         }
 
         .footer-logo {
-            font-size: 24px;
+            font-size: 1.5rem;
             font-weight: 700;
-            color: white;
-            margin-bottom: 15px;
         }
 
         .social-links {
             display: flex;
-            gap: 15px;
+            gap: 20px;
         }
 
         .social-links a {
             color: white;
-            font-size: 20px;
-            transition: color 0.3s ease;
+            font-size: 1.3rem;
+            transition: color 0.2s ease;
         }
 
         .social-links a:hover {
-            color: #4a6ee0;
+            color: var(--secondary);
         }
 
         .copyright {
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #444;
-            font-size: 14px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.85rem;
+            opacity: 0.8;
         }
 
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .about-content,
-            .contact-content {
-                flex-direction: column;
-            }
-            
-            .about-img {
-                max-width: 500px;
-                margin: 0 auto;
-            }
+        /* GitHub section */
+        .github-note {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            margin-top: 40px;
         }
 
+        .github-note a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* ========== RESPONSIVE DESIGN ========== */
         @media (max-width: 768px) {
+            body {
+                font-size: 15px;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.75rem; }
+
+            section {
+                padding: 60px 0;
+            }
+
             .menu-toggle {
                 display: block;
             }
-            
+
             .nav-links {
-                position: fixed;
-                top: 70px;
-                left: -100%;
+                display: none;
                 width: 100%;
-                background-color: white;
                 flex-direction: column;
-                align-items: center;
-                padding: 20px 0;
-                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-                transition: left 0.3s ease;
+                gap: 0;
+                margin-top: 16px;
             }
-            
+
             .nav-links.active {
-                left: 0;
+                display: flex;
             }
-            
+
             .nav-links li {
-                margin: 15px 0;
+                width: 100%;
+                text-align: center;
+                padding: 12px 0;
+                border-top: 1px solid var(--gray-light);
             }
-            
-            .hero h1 {
-                font-size: 36px;
+
+            .hero {
+                padding: 120px 0 60px;
             }
-            
-            .hero p {
-                font-size: 18px;
+
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
             }
-            
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .profile-image {
+                width: 200px;
+                height: 200px;
+            }
+
+            .profile-placeholder {
+                width: 200px;
+                height: 200px;
+            }
+
+            .profile-placeholder i {
+                font-size: 5rem;
+            }
+
+            .btn {
+                padding: 12px 24px;
+            }
+
             .footer-content {
                 flex-direction: column;
-                gap: 30px;
+                text-align: center;
             }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .skills-grid,
+            .certs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== ACCESSIBILITY ========== */
+        :focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
 <body>
-    <!-- Header & Navigation -->
     <header>
         <div class="container">
             <nav>
-                <div class="logo">Nicholus Wagura</div>
+                <a href="#" class="logo">Nicholas <span>Wagura</span></a>
+                <div class="menu-toggle" aria-label="Menu">
+                    <i class="fas fa-bars"></i>
+                </div>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <div class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <h1>Nicholus Muchiri Wagura</h1>
-            <p>Frontend Developer & Data scientist, Data analyst, Machine learning engineer, functional digital experiences</p>
-            <div class="hero-btns">
-                <a href="#projects" class="btn">View My Work</a>
-                <a href="cv.html" class="btn btn-outline">My cv/ Resume</a>
-                <a href="#contact" class="btn btn-outline">Get In Touch</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-img">
-                    <img src="https://image2url.com/images/1761216054508-fd908907-e5ef-497c-a7a2-f1dcb78a2cf1.jpg" alt="nicholus muchiri">
-                </div>
-                <div class="about-text">
-                    <h3>Hello! I'm Nicholus, a passionate Data analyst&scientist and fronted developer.</h3>
-                    <p>With over 5 years of experience in the industry, I specialize in creating responsive, user-friendly websites and applications. I have a strong eye for design and a passion for clean, efficient code, and good ui data dashbords</p>
-                    <p>My expertise includes HTML, CSS, JavaScript, React, python, SQL  and modern UI/UX design principles. I'm constantly learning and adapting to new technologies to deliver the best solutions for my clients.</p>
-                    <div class="skills">
-                        <span class="skill">HTML/CSS</span>
-                        <span class="skill">JavaScript</span>
-                        <span class="skill">React</span>
-                        <span class="skill">UI/UX Design</span>
-                        <span class="skill">Responsive Design</span>
-                        <span class="skill">Git</span>
-                        <span class="skill">Git</span>
-                        <span class="skill">Python</span>
-                        <span class="skill">SQL</span>
-                        <span class="skill">Data Analysis</span>
-                        <span class="skill">Machine Learning</span>
-                    </div>
-                    <a href="#" class="btn" style="margin-top: 20px;">Download CV</a>
-                    <a href="cv.html" class="btn" style="margin-top: 20px;">View CV</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
-        <div class="container">
-            <h2 class="section-title">My Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="E-commerce Website">
-                    </div>
-                    <div class="project-info">
-                        <h3>E-commerce Platform</h3>
-                        <p>A fully responsive e-commerce website with product filtering, cart functionality, and secure checkout.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">React</span>
-                            <span class="project-tag">django</span>
-                            <span class="project-tag">SQL</span>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Nicholas Muchiri Wagura</h1>
+                        <p class="tagline">Computer Science & Mathematics Student | Data Engineering & AI Enthusiast</p>
+                        <p class="intro">Building data-driven solutions with mathematics, machine learning, and ethical AI. Passionate about transforming complex problems into elegant technological solutions.</p>
+                        <div class="hero-buttons">
+                            <a href="#projects" class="btn btn-primary">View Projects</a>
+                            <a href="cv1.html" class="btn btn-cv" target="_blank">View My CV</a>
+                            <a href="#contact" class="btn btn-outline">Contact Me</a>
                         </div>
-                        <a href="#" class="btn">View Project</a>
                     </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80" alt="Finance Dashboard">
-                    </div>
-                    <div class="project-info">
-                        <h3>Finance Dashboard</h3>
-                        <p>Interactive dashboard for financial data visualization with real-time updates and customizable charts.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Vue.js</span>
-                            <span class="project-tag">D3.js</span>
-                            <span class="project-tag">Firebase</span>
-                        </div>
-                        <a href="#" class="btn">View Project</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Task Management App">
-                    </div>
-                    <div class="project-info">
-                        <h3>Task Management App</h3>
-                        <p>Collaborative task management application with drag-and-drop functionality and team features.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">React</span>
-                            <span class="project-tag">Redux</span>
-                            <span class="project-tag">Express</span>
-                        </div>
-                        <a href="#" class="btn">View Project</a>
+                    <div class="hero-image">
+                        <!-- Profile Image - Place your image file as "profile.jpg" in the same folder -->
+                        <img src="https://cdn.corenexis.com/files/c/8944223720.jpg" alt="Nicholas Muchiri Wagura" class="profile-image" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=profile-placeholder><i class=fas fa-user-graduate></i></div>'">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Let's work together</h3>
-                    <p>I'm always interested in new opportunities and collaborations. Feel free to reach out if you have a project in mind or just want to connect!</p>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h4>Email</h4>
-                            <p>nicholusmush@gmail.com</p>
-                        </div>
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>I am a dedicated <strong>Computer Science and Mathematics student</strong> with a specialization in <strong>Applied Mathematics</strong> at the Technical University of Mombasa. My academic journey combines theoretical mathematics with practical computer science, enabling me to approach problems from both analytical and computational perspectives.</p>
+                        <p>My passion lies in <strong>Artificial Intelligence, Machine Learning, and Data Engineering</strong>. I believe that data, when properly engineered and ethically applied, has the power to solve some of our world's most pressing challenges. I am particularly interested in privacy-preserving data systems and ethical AI development.</p>
+                        <p>Beyond data and AI, I have experience in <strong>web development</strong> (HTML, CSS, JavaScript), <strong>Linux systems</strong>, and <strong>networking</strong>. This diverse technical foundation allows me to build complete solutions — from database design and ETL pipelines to front-end interfaces that make data accessible to everyone.</p>
+                        <p>I am currently seeking an <strong>internship in Data Engineering</strong> where I can apply my skills to real-world data infrastructure and continue growing as a data professional.</p>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>+254 703576878</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <h4>Location</h4>
-                            <p>Mombasa Kenya</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
+        <!-- Skills Section -->
+        <section id="skills" class="section-bg-light">
+            <div class="container">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-code"></i> Programming</h3>
+                        <div class="skill-items">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">C++</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-database"></i> Data & AI</h3>
+                        <div class="skill-items">
+                            <span class="skill-tag">Data Engineering</span>
+                            <span class="skill-tag">Machine Learning</span>
+                            <span class="skill-tag">Data Analysis</span>
+                            <span class="skill-tag">ETL Pipelines</span>
+                            <span class="skill-tag">Prompt Engineering</span>
+                            <span class="skill-tag">Ethical AI</span>
+                            <span class="skill-tag">Differential Privacy</span>
+                            <span class="skill-tag">RAG</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-server"></i> Systems</h3>
+                        <div class="skill-items">
+                            <span class="skill-tag">Linux</span>
+                            <span class="skill-tag">Networking</span>
+                            <span class="skill-tag">Database Management</span>
+                            <span class="skill-tag">System Troubleshooting</span>
+                            <span class="skill-tag">Bash/Shell</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-tools"></i> Tools</h3>
+                        <div class="skill-items">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">Jupyter Notebook</span>
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">SQLite</span>
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">numpy</span>
+                            <span class="skill-tag">pyspark</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications">
+            <div class="container">
+                <h2 class="section-title">Certifications</h2>
+                <div class="certs-grid">
+                    <div class="cert-card">
+                        <i class="fab fa-ibm"></i>
+                        <h4>AI and Data Science Foundations</h4>
+                        <p>IBM SkillsBuild</p>
+                        <span class="cert-date">2025</span>
+                    </div>
+                    <div class="cert-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>Associate Data Engineer</h4>
+                        <p>DataCamp</p>
+                        <span class="cert-date">March 2026</span>
+                    </div>
+                    <div class="cert-card">
+                        <i class="fab fa-python"></i>
+                        <h4>Python Programming and Data Analysis</h4>
+                        <p>DataCamp</p>
+                        <span class="cert-date">2025</span>
+                    </div>
+                    <div class="cert-card">
+                        <i class="fas fa-balance-scale"></i>
+                        <h4>Ethical AI Practices</h4>
+                        <p>Self-Directed Learning</p>
+                        <span class="cert-date">2025</span>
+                    </div>
+                    <div class="cert-card">
+                        <i class="fas fa-comment-dots"></i>
+                        <h4>Prompt Engineering</h4>
+                        <p>Self-Directed Learning</p>
+                        <span class="cert-date">2025</span>
+                    </div>
+                    <div class="cert-card">
+                        <i class="fas fa-book"></i>
+                        <h4>Research Methodology and Technical Writing</h4>
+                        <p>Academic Training</p>
+                        <span class="cert-date">2024</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section with Images -->
+        <section id="projects" class="section-bg-light">
+            <div class="container">
+                <h2 class="section-title">My Projects</h2>
+                <div class="projects-grid">
+                    
+                    <!-- Project 1: Linux Learning Platform -->
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=600&h=400&fit=crop" alt="Linux Learning Platform" onerror="this.src='https://via.placeholder.com/600x400?text=Linux+Platform'">
+                        </div>
+                        <div class="project-content">
+                            <h3>Linux Learning Platform <span class="repo-badge">linuxweb</span></h3>
+                            <p>A comprehensive platform designed to help users learn Linux command line, system administration, and shell scripting through interactive tutorials and hands-on exercises.</p>
+                            <div class="project-tech">
+                                <span>Linux</span>
+                                <span>HTML/CSS</span>
+                                <span>JavaScript</span>
+                                <span>Bash</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/nicholus-mush/linuxweb" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Phone Number Location Tracker -->
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=600&h=400&fit=crop" alt="Phone Number Locator" onerror="this.src='https://via.placeholder.com/600x400?text=Phone+Locator'">
+                        </div>
+                        <div class="project-content">
+                            <h3>Phone Number Locator <span class="repo-badge">C++</span></h3>
+                            <p>A C++ application that identifies geographical location information from phone numbers using carrier databases and region mapping algorithms.</p>
+                            <div class="project-tech">
+                                <span>C++</span>
+                                <span>Algorithm Design</span>
+                                <span>Data Mapping</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/nicholus-mush" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Password Generator -->
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=600&h=400&fit=crop" alt="Password Generator" onerror="this.src='https://via.placeholder.com/600x400?text=Password+Generator'">
+                        </div>
+                        <div class="project-content">
+                            <h3>Advanced Password Generator <span class="repo-badge">passwordcreater</span></h3>
+                            <p>Algorithm to generate any possible password combination with customizable parameters including length, character types, and complexity levels.</p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>Cryptography</span>
+                                <span>Algorithm Design</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/nicholus-mush/passwordcreater" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: AI Intent Journal -->
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?w=600&h=400&fit=crop" alt="AI Intent Journal" onerror="this.src='https://via.placeholder.com/600x400?text=AI+Journal'">
+                        </div>
+                        <div class="project-content">
+                            <h3>AI Intent Journal <span class="repo-badge">aiintent</span></h3>
+                            <p>A self-paced journaling application integrated with AI that helps users track learning progress, reflect on goals, and receive intelligent insights.</p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>NLP</span>
+                                <span>AI Integration</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/nicholus-mush" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: Differential Privacy Research -->
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop" alt="Differential Privacy" onerror="this.src='https://via.placeholder.com/600x400?text=Differential+Privacy'">
+                        </div>
+                        <div class="project-content">
+                            <h3>Differential Privacy <span class="repo-badge">dprivacy</span></h3>
+                            <p>Research and implementation of differential privacy mechanisms including Laplace mechanism and ε-differential privacy for privacy-preserving data analysis.</p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>Differential Privacy</span>
+                                <span>Research</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/nicholus-mush" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6: IoT Port Simulator -->
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop" alt="IoT Port Simulator" onerror="this.src='https://via.placeholder.com/600x400?text=IoT+Simulator'">
+                        </div>
+                        <div class="project-content">
+                            <h3>IoT Port Simulator <span class="repo-badge">iotsimulator</span></h3>
+                            <p>AI-driven simulation for port operations featuring predictive modeling for operational efficiency and resource allocation optimization.</p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>Machine Learning</span>
+                                <span>Simulation</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/nicholus-mush" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 7: AI Decision Helper -->
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="https://images.unsplash.com/photo-1488229297570-58520851e868?w=600&h=400&fit=crop" alt="AI Decision Helper" onerror="this.src='https://via.placeholder.com/600x400?text=AI+Decision'">
+                        </div>
+                        <div class="project-content">
+                            <h3>AI Decision Helper <span class="repo-badge">aidecisionhelper</span></h3>
+                            <p>An intelligent decision support system that analyzes inputs, provides recommendations, and learns from user feedback to improve future suggestions.</p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>Machine Learning</span>
+                                <span>Decision Support</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/nicholus-mush" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 8: E-Commerce Platform -->
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop" alt="E-Commerce Platform" onerror="this.src='https://via.placeholder.com/600x400?text=E-Commerce'">
+                        </div>
+                        <div class="project-content">
+                            <h3>E-Commerce Platform <span class="repo-badge">maininfo</span></h3>
+                            <p>Full-featured e-commerce website with product catalog, shopping cart, user authentication, and secure checkout process.</p>
+                            <div class="project-tech">
+                                <span>JavaScript</span>
+                                <span>HTML/CSS</span>
+                                <span>E-commerce</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/nickysparsh743-hue" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 9: AI Port Management System -->
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=600&h=400&fit=crop" alt="AI Port Management" onerror="this.src='https://via.placeholder.com/600x400?text=Port+Management'">
+                        </div>
+                        <div class="project-content">
+                            <h3>AI Port Management <span class="repo-badge">myapp</span></h3>
+                            <p>Master port management system that ingests real-time data, makes AI-driven decisions, and features a live monitoring dashboard with analytics. Deployed on Vercel.</p>
+                            <div class="project-tech">
+                                <span>React</span>
+                                <span>AI Integration</span>
+                                <span>Analytics</span>
+                                <span>Vercel</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/nickysparsh743-hue/myapp" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- GitHub Summary -->
+                <div class="github-note">
+                    <i class="fab fa-github" style="font-size: 1.5rem; color: var(--accent);"></i>
+                    <p style="margin-top: 10px;">All projects available on GitHub: 
+                        <a href="https://github.com/nicholus-mush" target="_blank">github.com/nicholus-mush</a> & 
+                        <a href="https://github.com/nickysparsh743-hue" target="_blank">github.com/nickysparsh743-hue</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Let's Connect</h3>
+                        <p>I'm currently seeking industrial attachment opportunities in Data Engineering. Feel free to reach out for collaborations, questions, or just to say hello.</p>
+                        
+                        <div class="contact-detail">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:nicholusmush@gmail.com">nicholusmush@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                            <div>
+                                <h4>Phone</h4>
+                                <a href="tel:+254703576876">+254 703 576 876</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <div class="contact-icon"><i class="fab fa-github"></i></div>
+                            <div>
+                                <h4>GitHub Primary</h4>
+                                <a href="https://github.com/nicholus-mush" target="_blank">github.com/nicholus-mush</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <div class="contact-icon"><i class="fab fa-github"></i></div>
+                            <div>
+                                <h4>GitHub Secondary</h4>
+                                <a href="https://github.com/nickysparsh743-hue" target="_blank">github.com/nickysparsh743-hue</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+                            <div>
+                                <h4>LinkedIn</h4>
+                                <a href="https://www.linkedin.com/in/benard-mwangi-b683002b2" target="_blank">linkedin.com/in/benard-mwangi</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div>
-                    <div class="footer-logo">nicholus wagura</div>
-                    <p>Creating digital experiences that make a difference and revieling the secrets behind data.</p>
-                </div>
+                <div class="footer-logo">Nicholas Muchiri Wagura</div>
                 <div class="social-links">
-                    <a href="https://github.com/nicholusmush"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/benard-mwangi-b683002b2"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://x.com/nicholusmush"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/nickysparsh?igsh=bmR1cHNveGRpdW1w"><i class="fab fa-dribbble"></i></a>
-                    <a href="https://www.facebook.com/profile.php?id=61572445820749"><i class="fab fa-facebook"></i></a>
-                    <a href="https://t.me/Datamush"><i class="fab fa-telegram"></i></a>
-                    <a href="https://bsky.app/profile/nicholusmush.bsky.social"><i class="fab fa-bluesky"></i></a>
+                    <a href="https://github.com/nicholus-mush" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/nickysparsh743-hue" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/benard-mwangi-b683002b2" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://x.com/nicholusmush" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://t.me/Datamush" target="_blank"><i class="fab fa-telegram"></i></a>
+                    <a href="mailto:nicholusmush@gmail.com"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 nicholus wagura . All rights reserved.</p>
+                <p>&copy; 2026 Nicholas Muchiri Wagura. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
         // Mobile menu toggle
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
 
-        // Close mobile menu when clicking on a link
+        if (menuToggle) {
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // Close mobile menu when clicking a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', function() {
-                document.querySelector('.nav-links').classList.remove('active');
+                navLinks.classList.remove('active');
             });
         });
 
-        // Form submission
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
-            this.reset();
+        // Form submission handler
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! I will get back to you as soon as possible.');
+                contactForm.reset();
+            });
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
     </script>
 </body>
